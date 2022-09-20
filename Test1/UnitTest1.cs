@@ -10,10 +10,10 @@ namespace Test1
             [TestCategory("Happy mood")]
         public void TestMethod1()
         {
-            UC1 mood = new UC1();
-            string message = "I am in happy mood";
+            UC1 mood = new UC1("I am in happy mood");
+            
             string expected = "happy";
-            var actual = mood.Mood(message);
+            var actual = mood.Mood();
             Assert.AreEqual(expected, actual);
             Console.WriteLine(actual);
         }
@@ -23,10 +23,10 @@ namespace Test1
 
         public void TestMethod2()
         {
-            UC1 mood = new UC1();
-            string message = "I am in sad mood";
-            string expected = "Sad";
-            var actual = mood.Mood(message);
+            UC1 mood = new UC1("I am in sad mood");
+            
+            string expected = "sad";
+            var actual = mood.Mood();
             Assert.AreEqual(expected,actual);
             Console.WriteLine(actual);
         }

@@ -25,16 +25,21 @@ namespace MoodAnalyzer
                 {
                     return "happy";
                 }
+                else if(Message.Equals(string.Empty))
+                {
+                    throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.EMPTY_EXCEPTION, "Message cann't be Empty");
+
+                }
                 else
                 {
                     return "sad";
                 }
 
             }
-            catch(NullReferenceException )
+            catch(NullReferenceException ex)
             {
-                Console.WriteLine("The entered parameter can not be (Null)");
-                return "happy";
+                Console.WriteLine("Default exception: " + ex.Message);
+                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.NULL_EXCEPTION, "Message cann't be null");
             }
 
 

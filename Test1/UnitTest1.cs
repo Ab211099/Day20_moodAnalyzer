@@ -30,16 +30,42 @@ namespace Test1
             Assert.AreEqual(expected,actual);
             Console.WriteLine(actual);
         }
+       
+       
         [TestMethod]
-        [TestCategory("Null")]
-        public void GivenNullShouldReturnHappy()
+        [TestCategory("Empty Exception")]
+        public void GivenEmptyShouldReturnCustomException()
         {
-            string message = null;
-            UC1 mood = new UC1(message);
-            string excepted = "happy";
-            var actual = mood.Mood();
-            Assert.AreEqual(excepted,actual);
-            Console.WriteLine(actual);
+            string expected = "Message cann't be Empty";
+            try
+            {
+               string message = "";
+                UC1 mood = new UC1(message);    
+                string actual = mood.Mood();
+            }
+            catch (MoodAnalyzerException ex)
+            {
+                Console.WriteLine("Custom Exception: " + ex);
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
+        [TestMethod]
+        [TestCategory("Null Exception")]
+
+        public void GivenNullShouldReturnCustomException()
+        {
+            string expected = "Message cann't be null";
+            try
+            {
+                string message = null;
+                UC1 mood = new UC1(message);
+                string actual = mood.Mood();
+            }
+            catch(MoodAnalyzerException ex)
+            {
+                Console.WriteLine("Custom Exception " +ex);
+                Assert.AreEqual(expected,ex.Message);
+            }
         }
 
 

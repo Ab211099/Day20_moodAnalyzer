@@ -45,7 +45,7 @@ namespace Test1
             }
             catch (MoodAnalyzerException ex)
             {
-                Console.WriteLine("Custom Exception: " + ex);
+                Console.WriteLine("Custom Exception: "+ex);
                 Assert.AreEqual(expected, ex.Message);
             }
         }

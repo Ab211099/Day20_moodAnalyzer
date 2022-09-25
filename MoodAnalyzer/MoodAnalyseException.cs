@@ -13,7 +13,7 @@ namespace MoodAnalyzer
         public enum ExceptionType 
         {
             NULL_EXCEPTION,
-            EMPTY_EXCEPTION,
+            EMPTY_EXCEPTION
         }
 
         public ExceptionType Type;

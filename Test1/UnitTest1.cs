@@ -30,6 +30,17 @@ namespace Test1
             Assert.AreEqual(expected,actual);
             Console.WriteLine(actual);
         }
+        [TestMethod]
+        [TestCategory("Null")]
+        public void GivenNullShouldReturnHappy()
+        {
+            string message = null;
+            UC1 mood = new UC1(message);
+            string excepted = "happy";
+            var actual = mood.Mood();
+            Assert.AreEqual(excepted,actual);
+            Console.WriteLine(actual);
+        }
 
 
     }

@@ -17,14 +17,30 @@ namespace MoodAnalyzer
 
         public string Mood()
         {
-            if (Message.ToLower().Contains("happy"))
+
+            try
             {
+
+                if (Message.ToLower().Contains("happy"))
+                {
+                    return "happy";
+                }
+                else
+                {
+                    return "sad";
+                }
+
+            }
+            catch(NullReferenceException )
+            {
+                Console.WriteLine("The entered parameter can not be (Null)");
                 return "happy";
             }
-            else
-            {
-                return "sad";
-            }
+
+
+
         }
     }
 }
+
+ 
